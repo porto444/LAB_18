@@ -59,8 +59,8 @@ Processus :
 Authentification : Envoi de l'email (extrait des ressources) et du mot de passe (extrait via Frida) à l'API Google Identity.
 Obtention du Token : Récupération d'un idToken sécurisé.
 Lecture de la Database : Utilisation du token pour lire les données protégées de la Realtime Database.
-Flag récupéré : <img width="873" height="94" alt="Capture d&#39;écran 2026-04-15 163316" src="https://github.com/user-attachments/assets/8a04e4f8-e2a3-4807-a636-4696893645ad" />
-
+Flag récupéré :
+<img width="873" height="94" alt="Capture d&#39;écran 2026-04-15 163316" src="https://github.com/user-attachments/assets/8a04e4f8-e2a3-4807-a636-4696893645ad" />
 
 ## 7. Conclusion et Recommandations
 Cette intrusion met en évidence plusieurs vulnérabilités critiques :
