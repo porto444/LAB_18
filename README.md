@@ -30,12 +30,12 @@ Le manifeste définit la MainActivity comme l'activité de démarrage (Launcher)
 C'est sur cette classe précise que j'ai concentré l'analyse du code source pour comprendre l'initialisation de l'application.
 
 ## 3. Phase 2 : Extraction de données (Analyse des Ressources)
-Suite à la confirmation de l'utilisation du réseau dans le Manifeste, j'ai exploré les ressources statiques. Un vecteur courant de fuite d'information est le stockage de constantes dans res/values/strings.xml.
-L'inspection de ce fichier a permis de découvrir une configuration Firebase complète :
-
-firebase_api_key : Clé d'accès à l'API Google.
-firebase_email : Identifiant de service (TK757567@pwnsec.xyz).
-firebase_database_url : URL de la base de données Realtime Database.
+Puisque le Manifeste confirme que l'application est connectée, je me dirige vers les ressources statiques. Dans l'architecture Android, les développeurs centralisent souvent les configurations dans le fichier res/values/strings.xml.
+Extraction des informations :
+Même si le fichier peut être masqué dans l'arborescence, une recherche globale sur les schémas d'URL (https://) m'a permis d'extraire :
+firebase_api_key : La clé d'accès au service.
+firebase_email : L'identifiant utilisateur (TK757567@pwnsec.xyz).
+firebase_database_url : L'adresse de la base de données cible.
 
 ## 4. Phase 3 : Instrumentation Dynamique (Hooking avec Frida)
 Pour contourner l'absence d'appel de la fonction génératrice, j'ai utilisé Frida pour injecter un agent JavaScript en mémoire et forcer l'appel système de cette méthode.
